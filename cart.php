@@ -20,6 +20,8 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen"/>
     <link href="css/style1.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-13/css/all.min.css" >
+    
     <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
 </script>
@@ -100,25 +102,23 @@
                       </h5>
                     </td>
                     <td>
+                    <a href="addCart.php?cong=<?php echo $cart_item['id']?>"><i class="fas fa-plus-square"></i></a>
                     <?php echo $cart_item['soluong']?>
+                    <a href="addCart.php?tru=<?php echo $cart_item['id']?>"><i class="fas fa-minus-square"></i></a>
                     </td>
                     <td>
                       <h5>
                         <strong class="red">
                         <?php 
-                        if(isset($total)){
                           echo $total;
-                        }else{
-                          echo "0";
-                        }
                         ?>
                         </strong>
                       </h5>
                     </td>
                     <td>
-                      <a href="addCart.php?xoa=<?php echo $cart_item['id']?>">
-                        <img src="images/remove.png" alt="">
-                      </a>
+                        
+                        <a href="addCart.php?xoa=<?php echo $cart_item['id']?>"><img src="images/remove.png" alt=""></a>
+                        
                     </td>
                   </tr>
                   <?php
@@ -139,21 +139,18 @@
                       <?php echo $tongtien?>
                       </span>
                     </div>
-                    <button>
-                      Process To Checkout
-                    </button>
+                    <form action="checkout2.php" method="post">         
+                      <input type='submit' class="button" name="" value='Process To Checkout'> 
+                    </form>
                   </div>
                 </div>
 
                 <tfoot>
                   <tr>
                     <td colspan="6">
-                      <button class="pull-left">
-                        Continue Shopping
-                      </button>
-                      <button class=" pull-right">
-                        Update Shopping Cart
-                      </button>
+                    <form action="index.php" method="post">         
+                      <input type='submit' class="button" name="" value='Continue Shopping'> 
+                    </form>
                     </td>
                   </tr>
                 </tfoot>
@@ -166,9 +163,8 @@
             </div>
           </div>
           <div class="clearfix">
-          </div>
-          
-          
+        </div>
+      </div>
       <div class="clearfix">
       </div>
       <?php include ("footer.php");?>

@@ -1,3 +1,10 @@
+<?php
+   if(isset($_GET['action'])=='dangxuat'){
+      unset($_SESSION['dangnhap']);
+      header('location:login.php');
+   }
+?>
+
 <div class="wrapper">
          <div class="header">
             <div class="container">
@@ -8,27 +15,7 @@
                   <div class="col-md-10 col-sm-10">
                      <div class="header_top">
                         <div class="row">
-                           <div class="col-md-3">
-                              <ul class="option_nav">
-                                 <li class="dorpdown">
-                                    <a href="#">Eng</a>
-                                    <ul class="subnav">
-                                       <li><a href="#">Eng</a></li>
-                                       <li><a href="#">Vns</a></li>
-                                       <li><a href="#">Fer</a></li>
-                                       <li><a href="#">Gem</a></li>
-                                    </ul>
-                                 </li>
-                                 <li class="dorpdown">
-                                    <a href="#">USD</a>
-                                    <ul class="subnav">
-                                       <li><a href="#">USD</a></li>
-                                       <li><a href="#">UKD</a></li>
-                                       <li><a href="#">FER</a></li>
-                                    </ul>
-                                 </li>
-                              </ul>
-                           </div>
+                           
                            <div class="col-md-6">
                               <ul class="topmenu">
                                  <li><a href="#">About Us</a></li>
@@ -42,7 +29,11 @@
                            <div class="col-md-3">
                               <ul class="usermenu">
                                  <li><a href="login.php" class="log">Login</a></li>
-                                 <li><a href="register.php" class="reg">Register</a></li>
+                                 <li><a href="index.php?action=dangxuat" >Logout : <?php if(isset($_SESSION['dangnhap'])) 
+                                                                                    echo $_SESSION['dangnhap'];
+                                                                                    ?> 
+                                    </a>
+                                 </li>
                               </ul>
                            </div>
                         </div>
@@ -66,52 +57,52 @@
                                  <div class="dropdown-menu">
                                     <ul class="mega-menu-links">
                                        <li><a href="index.php">home</a></li>
-                                       <li><a href="home2.php">home2</a></li>
-                                       <li><a href="home3.php">home3</a></li>
-                                       <li><a href="productlitst.php">Productlitst</a></li>
-                                       <li><a href="productgird.php">Productgird</a></li>
-                                       <li><a href="details.php">Details</a></li>
+                                       <li><a href="#">home2</a></li>
+                                       <li><a href="#">home3</a></li>
+                                       <li><a href="#">Productlitst</a></li>
+                                       <li><a href="#">Productgird</a></li>
+                                       <li><a href="#">Details</a></li>
                                        <li><a href="cart.php">Cart</a></li>
-                                       <li><a href="checkout.php">CheckOut</a></li>
+                                       <li><a href="#">CheckOut</a></li>
                                        <li><a href="checkout2.php">CheckOut2</a></li>
-                                       <li><a href="contact.php">contact</a></li>
+                                       <li><a href="#">contact</a></li>
                                     </ul>
                                  </div>
                               </li>
-                              <li><a href="productgird.php">men</a></li>
-                              <li><a href="productlitst.php">women</a></li>
+                              <li><a href="#">men</a></li>
+                              <li><a href="#">women</a></li>
                               <li class="dropdown">
                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fashion</a>
                                  <div class="dropdown-menu mega-menu">
                                     <div class="row">
                                        <div class="col-md-6 col-sm-6">
                                           <ul class="mega-menu-links">
-                                             <li><a href="productgird.php">New Collection</a></li>
-                                             <li><a href="productgird.php">Shirts & tops</a></li>
-                                             <li><a href="productgird.php">Laptop & Brie</a></li>
-                                             <li><a href="productgird.php">Dresses</a></li>
-                                             <li><a href="productgird.php">Blazers & Jackets</a></li>
-                                             <li><a href="productgird.php">Shoulder Bags</a></li>
+                                             <li><a href="#">New Collection</a></li>
+                                             <li><a href="#">Shirts & tops</a></li>
+                                             <li><a href="#">Laptop & Brie</a></li>
+                                             <li><a href="#">Dresses</a></li>
+                                             <li><a href="#">Blazers & Jackets</a></li>
+                                             <li><a href="#">Shoulder Bags</a></li>
                                           </ul>
                                        </div>
                                        <div class="col-md-6 col-sm-6">
                                           <ul class="mega-menu-links">
-                                             <li><a href="productgird.php">New Collection</a></li>
-                                             <li><a href="productgird.php">Shirts & tops</a></li>
-                                             <li><a href="productgird.php">Laptop & Brie</a></li>
-                                             <li><a href="productgird.php">Dresses</a></li>
-                                             <li><a href="productgird.php">Blazers & Jackets</a></li>
-                                             <li><a href="productgird.php">Shoulder Bags</a></li>
+                                          <li><a href="#">New Collection</a></li>
+                                             <li><a href="#">Shirts & tops</a></li>
+                                             <li><a href="#">Laptop & Brie</a></li>
+                                             <li><a href="#">Dresses</a></li>
+                                             <li><a href="#">Blazers & Jackets</a></li>
+                                             <li><a href="#">Shoulder Bags</a></li>
                                           </ul>
                                        </div>
                                     </div>
                                  </div>
                               </li>
-                              <li><a href="productgird.php">gift</a></li>
-                              <li><a href="productgird.php">kids</a></li>
-                              <li><a href="productgird.php">blog</a></li>
-                              <li><a href="productgird.php">jewelry</a></li>
-                              <li><a href="contact.php">contact us</a></li>
+                              <li><a href="#">gift</a></li>
+                              <li><a href="#">kids</a></li>
+                              <li><a href="#">blog</a></li>
+                              <li><a href="#">jewelry</a></li>
+                              <li><a href="qlsanpham.php">Quản lý SP</a></li>
                            </ul>
                         </div>
                      </div>

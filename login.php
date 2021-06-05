@@ -1,5 +1,8 @@
 <?php
-	
+	session_start();
+	if(isset($_SESSION['dangnhap'])){
+		header("location: index.php");
+	}
 	include ('config.php');
 	if(isset($_POST['dangnhap'])){
 		$email = $_POST['email'];
@@ -8,9 +11,8 @@
      	$result = mysqli_query($conn,$sql);
     	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       	$count = mysqli_num_rows($result);
-		if($count == 1) {
-			// session_register("email");
-			// $_SESSION['login_user'] = $email;
+		if($count >0) {
+			$_SESSION['dangnhap'] = $email;
 			// echo 'dang nhap thanh cong';
 			header("location: index.php");
 		}else {

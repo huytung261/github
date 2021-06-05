@@ -1,4 +1,9 @@
 <?php
+   session_start();
+   if(isset($_SESSION['dangnhap'])){
+	}else{
+      header("location: login.php");
+   }
    include ('config.php');
    $sql = "SELECT idsp, name, price, images  FROM product";
 

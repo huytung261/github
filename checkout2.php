@@ -61,8 +61,13 @@
                       <?php echo $cart_item['name']?>
                       </a>
                     </p>
+                    <p>
+                      <a href="details.html">
+                      <a>Quantity: <?php echo $cart_item['soluong']?></a>
+                      </a>
+                    </p>
                     <h5 class="price">
-                    <?php echo $cart_item['price']?>
+                    <?php echo $total?>
                     </h5>
                   </div>
                 </div>
@@ -72,6 +77,21 @@
                     echo "Hiện tại giỏ hàng trống";
                 }
                 ?>
+                <div class="special-item">
+                  <div >
+                  <div class="shippingbox">
+                    <div class="subtotal">
+                      <h5>
+                        Total Money
+                      </h5>
+                      <span>
+                      <?php echo $tongtien?>
+                      </span>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                
               </div>
             </div>
             <div class="col-md-9">
